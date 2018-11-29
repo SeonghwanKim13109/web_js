@@ -18,16 +18,17 @@
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
-    <input id="button1" type="button" value="On" onclick="
-      if(document.querySelector('#button1').value === 'On' || document.querySelector('#button1').value === 'on'){
-      document.querySelector('body').style.backgroundColor='black';
-      document.querySelector('body').style.color='white';
-      document.querySelector('#button1').value = 'off';
+    <input id="button1" type="button" value="ON" onclick="
+      var target = document.querySelector('body');
+      if(this.value === 'ON'){
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      this.value = 'OFF';
       }
-      else{
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';
-      document.querySelector('#button1').value = 'on';
+      else if(this.value === 'OFF'){
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value = 'ON';
       }
     ">
     <ol>
