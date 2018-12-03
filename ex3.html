@@ -15,21 +15,40 @@
     </style>
     <title>Data Structure - Tree</title>
     <meta charset="utf-8">
+    <script type="text/javascript">
+      function nightDayHandler(self){
+      var link = document.querySelectorAll('a');
+      var target = document.querySelector('body');
+      var i = 0;
+      if(self.value === 'ON'){
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      self.value = 'OFF';
+      while(i <link.length){
+        link[i].style.color = 'powderblue';
+        i++;
+      }
+      }
+      else if(self.value === 'OFF'){
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      self.value = 'ON';
+      while(i <link.length){
+        link[i].style.color = 'blue';
+          i++;
+        }
+      }
+    }
+    </script>
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
     <input id="button1" type="button" value="ON" onclick="
-      var target = document.querySelector('body');
-      if(this.value === 'ON'){
-      target.style.backgroundColor='black';
-      target.style.color='white';
-      this.value = 'OFF';
-      }
-      else if(this.value === 'OFF'){
-      target.style.backgroundColor='white';
-      target.style.color='black';
-      this.value = 'ON';
-      }
+      nightDayHandler(this);
+    ">
+
+    <input id="button2" type="button" value="ON" onclick="
+      nightDayHandler(this);
     ">
     <ol>
       <li><a href="3-1.html">STACK</a> </li>
