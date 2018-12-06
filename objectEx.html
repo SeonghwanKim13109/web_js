@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script type="text/javascript">
+      var coworkers = {
+        "programmer" : "Seonghwan",
+        "designer" : "Inchan"
+      };  //객체는 중괄호 배열은 대괄호
+      document.write("programmer : " +coworkers.programmer+"<br>");
+      document.write("designer : " +coworkers.designer+"<br>");
+
+      <!--새로운 객체 멤버 추가 -->
+      coworkers.bookkeeper ="Jogwang";
+      document.write("bookkeeper : " +coworkers.bookkeeper+"<br>");
+
+      <!--객체 이름 ["변수명"]의 방법으로 변수명을 띄워쓰기 할 수 있다 -->
+      coworkers["data scientist"] = "Hwajun";
+      document.write("data scientist : " +coworkers["data scientist"]+"<br>");
+
+      </script>
+      <h2>Iteration</h2>
+      <div>
+        <br>
+        <script type="text/javascript">
+        <!--객체의 모든 멤버에 접근할 때는 for - in을 사용한다 -->
+        for(var key in coworkers){
+          var value = coworkers[key];
+          document.write(key + " : " + value +".<br>");
+        }
+        </script>
+      </div>
+
+      <h2>Method</h2>
+      <script type="text/javascript">
+        coworkers.showAll = function(){
+          for(var key in this){
+            var value = this[key];
+            document.write(key + " : " + value +".<br>");
+          }
+        }
+        coworkers.showAll();
+      </script>
+
+  </body>
+</html>
